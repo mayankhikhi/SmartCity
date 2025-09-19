@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCity Complaint Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="tailwind.js"></script>
+</head>
+<body class="bg-dark-primary text-gray-300">
+
+    <!-- Header -->
+    <header class="bg-dark-primary/80 backdrop-blur-md sticky top-0 z-50 border-b border-dark-tertiary/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 text-2xl font-bold text-white nav-link" data-page="home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-blue" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+                <span>SmartCity</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="home">Home</a>
+                <a href="#" class="text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="file-complaint">File Complaint</a>
+                <a href="#" class="text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="track-complaint">Track Status</a>
+                <a href="#" class="text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="dashboard">Dashboard</a>
+                <a href="#" class="text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="about">About</a>
+            </div>
+            <a href="#" class="hidden md:block bg-brand-blue text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold transform hover:scale-105 nav-link" data-page="file-complaint">Report an Issue</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#" class="block text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="home">Home</a>
+            <a href="#" class="block text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="file-complaint">File Complaint</a>
+            <a href="#" class="block text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="track-complaint">Track Status</a>
+            <a href="#" class="block text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="dashboard">Dashboard</a>
+            <a href="#" class="block text-gray-400 hover:text-white font-medium transition-colors duration-300 nav-link" data-page="about">About</a>
+            <a href="#" class="block bg-brand-blue text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300 font-semibold nav-link" data-page="file-complaint">Report an Issue</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <!-- Hero Section -->
+            <div class="relative">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2070&auto=format&fit=crop" alt="Modern cityscape at dusk">
+                    <div class="absolute inset-0 bg-dark-primary/60"></div>
+                </div>
+                <div class="relative container mx-auto px-6 py-24 lg:py-48 text-center text-white">
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Your Voice, Your City.</h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">Empowering citizens to report civic issues, track resolutions, and build a better, more transparent community together.</p>
+                    <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#" class="w-full sm:w-auto bg-brand-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 nav-link" data-page="file-complaint">File a Complaint</a>
+                        <a href="#" class="w-full sm:w-auto bg-dark-secondary/50 border border-dark-tertiary/80 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-dark-secondary transition-all duration-300 transform hover:scale-105 nav-link" data-page="dashboard">View Public Dashboard</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">A Seamless Workflow for a Better City</h2>
+                        <p class="mt-3 text-lg text-gray-400 max-w-2xl mx-auto">Our process is simple, transparent, and designed for effective action.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="bg-dark-secondary p-8 rounded-xl border border-dark-tertiary">
+                            <div class="bg-blue-500/10 text-brand-blue rounded-full h-16 w-16 mx-auto flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-6 text-white">1. Submit Complaint</h3>
+                            <p class="mt-2 text-gray-400">Encounter an issue? Easily submit a detailed complaint with photos and location data through our user-friendly portal.</p>
+                        </div>
+                        <div class="bg-dark-secondary p-8 rounded-xl border border-dark-tertiary">
+                            <div class="bg-green-500/10 text-green-400 rounded-full h-16 w-16 mx-auto flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-6 text-white">2. Track & Get Notified</h3>
+                            <p class="mt-2 text-gray-400">Stay informed with real-time status updates. Both you and the public can track the complaint's progress towards resolution.</p>
+                        </div>
+                        <div class="bg-dark-secondary p-8 rounded-xl border border-dark-tertiary">
+                            <div class="bg-pink-500/10 text-pink-400 rounded-full h-16 w-16 mx-auto flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mt-6 text-white">3. See It Resolved</h3>
+                            <p class="mt-2 text-gray-400">Once the issue is fixed, the status is updated to "Solved". Your feedback helps create lasting positive change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Urban Challenge Section -->
+            <div class="py-20">
+                <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">The Urban Challenge: Unresolved Issues and Distrust</h2>
+                        <p class="mt-4 text-lg text-gray-400">Even in our most ambitious "smart cities," a fundamental disconnect persists. Crucial issues like broken roads, poor waste management, and faulty streetlights often go unaddressed, leading to frustration and a perception of indifference.</p>
+                        <p class="mt-4 text-lg text-gray-400">Our portal is designed to fix this, bridging the gap between citizens and city administration through radical transparency.</p>
+                        <a href="#" class="mt-6 inline-block bg-brand-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 nav-link" data-page="file-complaint">Make Your Voice Heard</a>
+                    </div>
+                    <div>
+                        <img src="https://t3.ftcdn.net/jpg/02/01/41/92/360_F_201419293_4CQG3pEVyRltQzy7ImZMJvWntCsMS4TM.jpg" alt="Pothole in a city street" class="rounded-xl shadow-2xl opacity-80">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Complaint Page -->
+        <section id="file-complaint" class="page">
+            <div class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="text-center mb-10">
+                            <h1 class="text-3xl md:text-4xl font-bold text-white">File a New Complaint</h1>
+                            <p class="mt-3 text-lg text-gray-400">Provide the details of the issue below. Your report helps us make our city better.</p>
+                        </div>
+                        <div id="complaint-form-container" class="bg-dark-secondary p-8 md:p-10 rounded-xl border border-dark-tertiary">
+                            <form id="complaint-form" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300">Full Name (Optional)</label>
+                                    <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300">Email Address (for updates)</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white">
+                                </div>
+                                <div>
+                                    <label for="category" class="block text-sm font-medium text-gray-300">Complaint Category</label>
+                                    <select id="category" name="category" required class="mt-1 block w-full px-4 py-2 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white">
+                                        <option>Potholes / Road Damage</option>
+                                        <option>Waste Management / Uncollected Garbage</option>
+                                        <option>Streetlight Outage</option>
+                                        <option>Water Leakage / Drainage Issue</option>
+                                        <option>Public Park Maintenance</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="location" class="block text-sm font-medium text-gray-300">Location / Address</label>
+                                    <input type="text" id="location" name="location" required placeholder="e.g., Near City Hall, Park Street" class="mt-1 block w-full px-4 py-2 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white">
+                                </div>
+                                <div>
+                                    <label for="description" class="block text-sm font-medium text-gray-300">Detailed Description</label>
+                                    <textarea id="description" name="description" rows="4" required class="mt-1 block w-full px-4 py-2 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white"></textarea>
+                                </div>
+                                <div>
+                                    <label for="photo" class="block text-sm font-medium text-gray-300">Upload Photo (Optional)</label>
+                                    <input type="file" id="photo" name="photo" class="mt-1 block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500/10 file:text-blue-300 hover:file:bg-blue-500/20 transition-colors duration-300">
+                                </div>
+                                <div class="pt-4">
+                                    <button type="submit" class="w-full bg-brand-blue text-white py-3 px-6 rounded-md text-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-secondary focus:ring-blue-500 transition-all duration-300 transform hover:scale-105">Submit Complaint</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="form-success-message" class="hidden mt-8 text-center bg-dark-secondary border border-green-500/30 text-green-300 px-4 py-5 rounded-lg relative" role="alert">
+                            <strong class="font-bold text-lg">Success!</strong>
+                            <span class="block sm:inline mt-1">Your complaint has been submitted.</span>
+                            <p class="mt-4 text-base">Your Complaint ID is: <strong id="complaint-id-display" class="text-xl text-yellow-400"></strong></p>
+                            <p class="text-sm text-gray-400">Please save this ID to track the status of your complaint.</p>
+                            <button id="file-another" class="mt-6 bg-brand-blue text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-300">File Another Complaint</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track Complaint Page -->
+        <section id="track-complaint" class="page">
+            <div class="py-20 min-h-[70vh] flex items-center">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="text-center mb-10">
+                            <h1 class="text-3xl md:text-4xl font-bold text-white">Track Your Complaint</h1>
+                            <p class="mt-3 text-lg text-gray-400">Enter your Complaint ID below to see the latest status.</p>
+                        </div>
+                        <div class="bg-dark-secondary p-8 rounded-xl border border-dark-tertiary">
+                            <form id="track-form" class="flex flex-col sm:flex-row gap-4">
+                                <input type="text" id="complaint-id-input" placeholder="Enter Complaint ID (e.g., C-12345)" required class="flex-grow w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white">
+                                <button type="submit" class="bg-brand-blue text-white py-3 px-8 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300">Track</button>
+                            </form>
+                        </div>
+                        <div id="tracking-results" class="hidden mt-8 bg-dark-secondary p-8 rounded-xl border border-dark-tertiary">
+                           <!-- Results will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Public Dashboard Page -->
+        <section id="dashboard" class="page">
+            <div class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h1 class="text-3xl md:text-4xl font-bold text-white">Public Complaints Dashboard</h1>
+                        <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">A transparent view of all civic issues being reported across the city. Fostering accountability and trust.</p>
+                    </div>
+                    <div class="bg-dark-secondary rounded-xl shadow-lg overflow-hidden border border-dark-tertiary">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-dark-tertiary/40">
+                                    <tr>
+                                        <th class="p-4 font-semibold text-sm text-gray-300 uppercase tracking-wider">Complaint ID</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-300 uppercase tracking-wider">Category</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-300 uppercase tracking-wider">Location</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-300 uppercase tracking-wider">Date Filed</th>
+                                        <th class="p-4 font-semibold text-sm text-gray-300 uppercase tracking-wider">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboard-table-body" class="divide-y divide-dark-tertiary">
+                                   <!-- Dashboard rows will be injected here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h1 class="text-3xl md:text-4xl font-bold text-white">Meet the Team</h1>
+                        <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">We are Team The Hashira, dedicated to revolutionizing civic engagement through technology.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                            <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-brand-blue object-cover" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&q=80" alt="Anurag Maurya">
+                            <h3 class="text-xl font-bold text-white">Anurag Maurya</h3>
+                            <p class="text-blue-400 font-medium">Lead Developer</p>
+                        </div>
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                            <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-pink-500 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80" alt="Vaishnavi S.">
+                            <h3 class="text-xl font-bold text-white">Vaishnavi S.</h3>
+                            <p class="text-pink-400 font-medium">UI/UX Designer</p>
+                        </div>
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                             <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-yellow-500 object-cover" src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&h=100&fit=crop&q=80" alt="Khushi G.">
+                            <h3 class="text-xl font-bold text-white">Khushi G.</h3>
+                            <p class="text-yellow-400 font-medium">Project Manager</p>
+                        </div>
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                            <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="Alex Johnson">
+                            <h3 class="text-xl font-bold text-white">Alex Johnson</h3>
+                            <p class="text-green-400 font-medium">Backend Specialist</p>
+                        </div>
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                           <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-500 object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&q=80" alt="Maria Garcia">
+                            <h3 class="text-xl font-bold text-white">Maria Garcia</h3>
+                            <p class="text-purple-400 font-medium">Data Analyst</p>
+                        </div>
+                        <div class="bg-dark-secondary text-center p-8 rounded-xl border border-dark-tertiary">
+                           <img class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-red-500 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&q=80" alt="Kenji Tanaka">
+                            <h3 class="text-xl font-bold text-white">Kenji Tanaka</h3>
+                            <p class="text-red-400 font-medium">QA Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-primary border-t border-dark-tertiary/50">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white">SmartCity</h3>
+                    <p class="mt-2 text-gray-400">Your platform for a better, more responsive city. Report, track, and resolve civic issues with transparency.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Quick Links</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white nav-link transition-colors duration-300" data-page="home">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white nav-link transition-colors duration-300" data-page="file-complaint">File Complaint</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white nav-link transition-colors duration-300" data-page="track-complaint">Track Status</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white nav-link transition-colors duration-300" data-page="dashboard">Public Dashboard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white nav-link transition-colors duration-300" data-page="about">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Contact Us</h4>
+                    <p class="mt-4 text-gray-400">123 City Hall, Downtown</p>
+                    <p class="text-gray-400">contact@smartcity.gov</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-dark-tertiary pt-8 text-center text-gray-500">
+                <p>&copy; 2025 SmartCity. All rights reserved. Created by Team The Hashira.</p>
+            </div>
+        </div>
+    </footer>
+    
+<script src="script.js"></script>
+
+</body>
+</html>
+
